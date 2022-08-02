@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "username": "Abdul Majid",
+      "email": "abdul@xigmapro.com",
+      "phone":"767676",
+      "password": "q12",
+      "id": 1
+    },
+    {
+      "empname": "indra",
+      "email": "indra@example.com",
+      "phone":"687698",
+      "password": "q13",
+      "id": 2
+    },
+    {
+      "empname": "suvadip",
+      "email": "suvadip@example.com",
+      "phone":"456423",
+      "password": "q14",
+      "id": 3
+    }
+  ]
+}
