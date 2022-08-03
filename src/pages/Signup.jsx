@@ -3,32 +3,38 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Form, Row, FormGroup, Label, Input, Col, Button } from "reactstrap";
 import { useState } from "react";
 // import '../components/style.css'
-import { ToastContainer ,toast} from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios'
 
 const Signup = () => {
  
+  const[user,setUser]=useState()
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
+  const[status,setStatus]=useState()
 
-  const [phone, setPhone] = useState("");
+  function onTextFieldChange(e){
+    setUser(
+      {
+        ...user,
+        [e.target.name]:e.target.value,
+      }
+    )
+  }
 
-  // form data submit
-
-  const submitHandler = (e) => {
+  async function submitHandler(e) {
     e.preventDefault();
-    localStorage.setItem("UserName", name);
-    localStorage.setItem("Email", email);
-    localStorage.setItem("Phone", phone);
+    try {
+      await axios.post(`http://localhost:3333/users`, user);
+      setStatus(true);
+      console.log(user)
+    } catch (error) {
+      console.log("Something is Wrong");
+    }
+  }
 
-    localStorage.setItem("Password", pass);
-  };
+  
 
-  const notify = () => toast.success("Registration Success",{
-    position: "top-center",
-  });
+
+  
 
   return (
     <>
@@ -43,7 +49,7 @@ const Signup = () => {
                   name="name"
                   placeholder="Enter Name"
                   type="text"
-                  onChange={(e) => setName(e.target.value)}
+                  onChange={(e) => onTextFieldChange(e)}
                 />
               </FormGroup>
             </Col>
@@ -55,7 +61,7 @@ const Signup = () => {
                   name="email"
                   placeholder="Enter Email"
                   type="email"
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => onTextFieldChange(e)}
                 />
               </FormGroup>
             </Col>
@@ -69,7 +75,7 @@ const Signup = () => {
                   name="phone"
                   placeholder="Enter Phone Number"
                   type="number"
-                  onChange={(e) => setPhone(e.target.value)}
+                  onChange={(e) => onTextFieldChange(e)}
                 />
               </FormGroup>
             </Col>
@@ -81,25 +87,17 @@ const Signup = () => {
                   name="password"
                   placeholder="Enter a password Number"
                   type="password"
-                  onChange={(e) => setPass(e.target.value)}
+                  onChange={(e) => onTextFieldChange(e)}
                 />
               </FormGroup>
             </Col>
           </Row>
           
 
-          <Button className="btn" onClick={notify}>Sign Up</Button>
+          <Button className="btn" >Sign Up</Button>
         </Form>
       </div>
-      <div>
-        <div>{localStorage.getItem("UserName")}</div>
-
-        <div>{localStorage.getItem("Email")}</div>
-        <div>{localStorage.getItem("Phone")}</div>
-        <div>{localStorage.getItem("Password")}</div>
-
-      </div>
-      <ToastContainer/>
+      
     </>
   );
 };

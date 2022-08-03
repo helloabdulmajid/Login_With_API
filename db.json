@@ -3,23 +3,66 @@
     {
       "username": "Abdul Majid",
       "email": "abdul@xigmapro.com",
-      "phone":"767676",
+      "phone": "767676",
       "password": "q12",
       "id": 1
     },
     {
-      "empname": "indra",
+      "username": "indra",
       "email": "indra@example.com",
-      "phone":"687698",
+      "phone": "687698",
       "password": "q13",
       "id": 2
     },
     {
-      "empname": "suvadip",
+      "username": "suvadip",
       "email": "suvadip@example.com",
-      "phone":"456423",
+      "phone": "456423",
       "password": "q14",
       "id": 3
+    },
+    {
+      "Username": "",
+      "Email": "",
+      "Phone": "",
+      "Password": "",
+      "id": 4
+    },
+    {
+      "Username": "",
+      "Email": "",
+      "Phone": "",
+      "Password": "",
+      "name": "dfrggr",
+      "phone": "23333",
+      "email": "am@gmail.xom",
+      "password": "wwww",
+      "id": 5
+    },
+    {
+      "Username": "",
+      "Email": "",
+      "Phone": "",
+      "Password": "",
+      "name": "Abdul Majid",
+      "email": "abdul@xigmapro.com4",
+      "phone": "12233",
+      "password": "wsws",
+      "id": 6
+    },
+    {
+      "name": "Abdul Majid",
+      "email": "abdul@xigmapro.com",
+      "phone": "109",
+      "password": "111",
+      "id": 7
+    },
+    {
+      "name": "Abdul Sgdshhhr",
+      "phone": "4567",
+      "email": "am@gmail.xom",
+      "password": "wwreewr",
+      "id": 8
     }
   ]
 }
